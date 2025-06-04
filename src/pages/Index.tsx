@@ -61,7 +61,7 @@ const Index = () => {
     setSearchPerformed(true);
 
     try {
-      const geoRes = await fetch(`http://localhost:5000/api/geocode?address=${encodeURIComponent(query)}`);
+      const geoRes = await fetch(`https://map-backend-zeg6.onrender.com/api/geocode?address=${encodeURIComponent(query)}`);
       const geoData = await geoRes.json();
 
       if (geoData.status !== 'OK') throw new Error('Geocoding failed');
@@ -82,7 +82,7 @@ const Index = () => {
     setSearchPerformed(true);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/nearby?lat=${lat}&lng=${lng}`);
+      const res = await fetch(`https://map-backend-zeg6.onrender.com/api/nearby?lat=${lat}&lng=${lng}`);
       const data = await res.json();
 
       if (data.status === 'OK') {
